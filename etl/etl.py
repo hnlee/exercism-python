@@ -1,6 +1,4 @@
 def transform(old):
-    new = {}
-    for i in old:
-        for j in old[i]:
-            new[j.lower()] = i
+    new = dict((k.lower(), i) for k in j
+               for i, j in old.iteritems())
     return new
