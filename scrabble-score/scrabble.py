@@ -7,7 +7,6 @@ POINTS = dict([(x, 1) for x in 'AEIOULNRST'] +
               [(x, 10) for x in 'QZ'])
 
 def score(word):
-    if any(not x.isalpha() for x in word):
+    if not x.isalpha():
         return 0
-    word = word.upper()
-    return sum(POINTS[x] for x in word)
+    return sum(POINTS[x] for x in word.upper())
